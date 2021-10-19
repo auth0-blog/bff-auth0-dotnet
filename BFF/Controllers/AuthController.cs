@@ -17,16 +17,19 @@ namespace BackendForFrontend.Controllers
             return new ChallengeResult("Auth0", new AuthenticationProperties() { RedirectUri = returnUrl });
         }
 
-        [Authorize]
-        public ActionResult Logout()
-        {
-            return new SignOutResult("Auth0", new AuthenticationProperties
-            {
-                RedirectUri = Url.Action("Index", "Home")
-            });
-        }
+    [Authorize]
+    public async Task<ActionResult> Logout()
+    {
+      await HttpContext.SignOutAsync();
 
-        public ActionResult GetUser()
+      return new SignOutResult("Auth0", new AuthenticationProperties
+      {
+        RedirectUri = Url.Action("Index", "Home")
+      });
+    }
+
+
+    public ActionResult GetUser()
         {
             if (User.Identity.IsAuthenticated)
             {

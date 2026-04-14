@@ -1,0 +1,8 @@
+<Solution>
+  <Project Path="backendforfrontend.client/backendforfrontend.client.esproj">
+    <Build />
+    <Deploy />
+  </Project>
+  <Project Path="BackendForFrontend.Server/BackendForFrontend.Server.csproj" />
+  <Project Path="WeatherForecastAPI/WeatherForecastAPI.csproj" Id="7c9e49f5-02cb-4fcb-a9d8-e18446e42eb1" />
+</Solution>
